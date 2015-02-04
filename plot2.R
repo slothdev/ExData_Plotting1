@@ -1,5 +1,5 @@
 # plot2.R
-# Edwin Seah 20150205013800
+# Edwin Seah 20150205013800 SGT
 #
 # Script to reconstruct sample plot 2 using base plotting system
 # Forked instructions: "https://github.com/rdpeng/ExData_Plotting1"
@@ -26,11 +26,10 @@ plot2 <- function() {
                     nrows=(row_end - row_start), 
                     skip=row_start)
 
-    gap.df <- subset(df, select=c(D, T, GA))
-    gap.df$DT <- strptime(paste(gap.df$D, gap.df$T), format="%d/%m/%Y %T")
+    df$DT <- strptime(paste(df$D, df$T), format="%d/%m/%Y %T")
     png(filename="plot2.png", width=480, height=480, units="px")
-    plot(gap.df$DT, 
-         gap.df$GA, 
+    plot(df$DT,
+         df$GA, 
          type="l", 
          xlab="", 
          ylab="Global Active Power (kilowatts)")

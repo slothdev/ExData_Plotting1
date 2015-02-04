@@ -1,5 +1,5 @@
 # plot1.R
-# Edwin Seah 20150205001048
+# Edwin Seah 20150205001048 SGT
 #
 # Script to reconstruct sample plot 1 using base plotting system
 # Forked instructions: "https://github.com/rdpeng/ExData_Plotting1"
@@ -26,9 +26,8 @@ plot1 <- function() {
                     nrows=(row_end - row_start), 
                     skip=row_start)
 
-    gap.df <- (as.numeric(df$GA))
     png(filename="plot1.png", width=480, height=480, units="px")
-    hist(gap.df, 
+    hist(as.numeric(df$GA), 
          main="Global Active Power", 
          xlab="Global Active Power (kilowatts)",
          col="red")

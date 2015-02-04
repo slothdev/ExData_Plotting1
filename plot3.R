@@ -1,5 +1,5 @@
 # plot3.R
-# Edwin Seah 20150205020830
+# Edwin Seah 20150205020830 SGT
 #
 # Script to reconstruct sample plot 3 using base plotting system
 # Forked instructions: "https://github.com/rdpeng/ExData_Plotting1"
@@ -26,16 +26,15 @@ plot3 <- function() {
                     nrows=(row_end - row_start), 
                     skip=row_start)
     
-    sm.df <- subset(df, select=c(D, T, SM1, SM2, SM3))
-    sm.df$DT <- strptime(paste(sm.df$D, sm.df$T), format="%d/%m/%Y %T")
+    df$DT <- strptime(paste(df$D, df$T), format="%d/%m/%Y %T")
     png(filename="plot3.png", width=480, height=480, units="px")
-    plot(sm.df$DT, 
-         sm.df$SM1, 
+    plot(df$DT, 
+         df$SM1, 
          type="l", 
          xlab="", 
          ylab="Energy sub metering")
-    lines(sm.df$DT, sm.df$SM2, col="red")
-    lines(sm.df$DT, sm.df$SM3, col="blue")
+    lines(df$DT, df$SM2, col="red")
+    lines(df$DT, df$SM3, col="blue")
     legend("topright", 
            c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
            col=c("black", "red", "blue"),
