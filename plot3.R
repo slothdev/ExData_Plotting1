@@ -1,5 +1,5 @@
 # plot3.R
-# Edwin Seah 20150205013800
+# Edwin Seah 20150205020830
 #
 # Script to reconstruct sample plot 3 using base plotting system
 # Forked instructions: "https://github.com/rdpeng/ExData_Plotting1"
