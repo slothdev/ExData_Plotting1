@@ -17,8 +17,8 @@
 
 plot1 <- function() {
     rawfile <- "household_power_consumption.txt"
-    row_start <- 66636
-    row_end <- 69516
+    row_start <- 66636  # starting entry row for 1/2/2007
+    row_end <- 69516    # last entry row for 2/2/2007
     df <- read.csv2(rawfile, header=TRUE, sep=";", na.strings="?",
                     colClasses="character",
                     col.names=c("D", "T", "GA", "GR", "V", 
